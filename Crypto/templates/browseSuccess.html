@@ -1,0 +1,29 @@
+{% extends 'browse.html' %}
+{% block body2 %}
+  <p>The current price is: {{cryptoPrice}} (usd)</p>
+  <canvas id="myChart" width="800" height="800"></canvas>
+  <script>
+  const ctx = document.getElementById('myChart').getContext('2d');
+  const myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+          labels: {{timeList | safe}},
+          datasets: [{
+              label: '{{cryptoCurrency}}' + " Price",
+              data: {{historyPrice}},
+              borderColor: 'rgb(0, 128, 0)',
+          }]
+      },
+      options: {
+                 responsive: false
+             }
+      })
+  </script>
+
+  {% if returnUser == True %}
+    <form action="followSuccess" method="post">
+      <input type = "hidden" name = "cryptoCurrency" value = {{cryptoCurrency}}>
+      <input class="enter" type="submit" value="Follow">
+    </form>
+  {% endif %}
+{% endblock %}

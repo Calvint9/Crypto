@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block body %}
+  <div class="card">
+    <form action="browseSuccess" method="post">
+      Search:
+      <input type="text" name="crypto" value>
+      <input class="enter" type="submit" value="Search">
+    </form>
+    {% block body2 %}
+    {% endblock %}
+  </div>
+{% endblock %}

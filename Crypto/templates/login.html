@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block body %}
+  <div class="card">
+    <h1>Log In Form</h1>
+    {% block body2 %}
+    {% endblock %}
+    <form action="loginSuccess" method="post">
+      <input type="text" name="username" required maxlength="50"
+      placeholder="USERNAME">
+      <input type = "password" name="password" required maxlength="50"
+      placeholder="PASSWORD">
+      <input class="enter" type="submit" value="Log In">
+    </form>
+  </div>
+{% endblock %}

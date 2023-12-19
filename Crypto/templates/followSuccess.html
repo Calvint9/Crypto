@@ -1,0 +1,6 @@
+{% extends 'following.html' %}
+{% block body2 %}
+{% if alreadyFollowing == True %}
+  <script>alert('You are already following this cryptocurrency!')</script>
+{% endif %}
+{% endblock %}

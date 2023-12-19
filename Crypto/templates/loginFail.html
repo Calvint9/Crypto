@@ -1,0 +1,8 @@
+{% extends 'login.html' %}
+{% block body2 %}
+  {% if userTrue == False %}
+  <p>User does not exist! Please try again!</p>
+  {% elif passwordTrue == False %}
+  <p>Wrong Password! Please try again!</p>
+  {% endif %}
+{% endblock %}

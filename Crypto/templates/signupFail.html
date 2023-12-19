@@ -1,0 +1,10 @@
+{% extends 'signup.html' %}
+{% block body2 %}
+{% if passwordSame == False %}
+  <p>The passwords did not match up or missing a field! Please sign up again!</p>
+{% elif usernameUsed == True %}
+  <p>This username has already been used! Please sign up again!</p>
+{% elif emailUsed == True %}
+  <p>This email has already been used! Please sign up again!</p>
+{% endif %}
+{% endblock %}

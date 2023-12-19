@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="card">
+  {% block body2 %}
+  {% endblock %}
+  <h1>Following:</h1>
+  <ul id="followingList">
+  {% for item in cryptoList %}
+    <li>{{item}}</li>
+  {% endfor %}
+  </ul>
+  <br/>
+<form action="deleting" method="post">
+  <input type = "text" name="deleteCrypto" maxlength="50"
+  placeholder="Cryptocurrency to remove">
+  <input class="enter" type="submit" value="Remove">
+</form>
+</div>
+{% endblock %}

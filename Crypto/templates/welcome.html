@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class='card'>
+<canvas id="myChart" width="800" height="800"></canvas>
+<script>
+const ctx = document.getElementById('myChart').getContext('2d');
+const myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: {{timeList | safe}},
+        datasets: [{
+            label: 'Bitcoin Price',
+            data: {{historyPrice}},
+            fill: false,
+            borderColor: 'rgb(0, 128, 0)',
+            tension: 0.1
+        }]
+    },
+    options: {
+               responsive: false
+           }
+    })
+</script>
+
+<h1 id="trend">Currently Trending</h1>
+<ul>
+{% for item in trend %}
+  <li>{{item}}</li>
+{% endfor %}
+</ul>
+</div>
+{% endblock %}

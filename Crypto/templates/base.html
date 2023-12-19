@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <title>Cryptocurrency Tracker</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <h1><a href="http://www.2122.lakeside-cs.org/CalvinTran/finalproject/" id="home">CRYPTO TRACKER</a></h1><hr/>
+    <ul id="navBar">
+      <li><a href="browse">Browse</a></li>
+      {% if returnUser == True %}
+        <li><a href="following">Following</a></li>
+        <li><a href="logout">Log Out</a></li>
+      {% else %}
+        <li><a href="signup">Sign Up</a></li>
+        <li><a href="login">Log In</a></li>
+      {% endif %}
+    </ul>
+    {% block body %}
+    {% endblock %}
+  </body>
+</html>
